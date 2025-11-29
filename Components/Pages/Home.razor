@@ -1,7 +1,51 @@
 ﻿@page "/"
+@using Models
+@using Clients
 
 <PageTitle>Home</PageTitle>
 
 <h1>Game Store</h1>
+@if(games is null)
+{
+    <p><em>Loading</em>Not Games Found</p>
+}
+else{
+    <table class="table table-striped-columns table-bordered table-hover">
+        <thead class="table-dark">
+            <th>ID</th>
+            <th>Name</th>
+            <th>Genre</th>
+            <th class="text-end">Price</th>
+            <th>Release Date</th>
+            <th></th>
+        </thead>
+        <tbody>
+            @foreach (var game in games)
+            {
+                <tr>
+                    <td>@game.Id</td>
+                    <td>@game.Name</td>
+                    <td>@game.Genre</td>
+                    <td class="text-end">@game.Price.ToString("C2")</td>
+                    <td>@game.ReleaseDate</td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 
-Welcome to your new app.
+@code {
+    private GamesClient client = new();
+
+    // Null when component is render
+    private GameSummary[]? games;
+
+    // Init the game array
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        games = client.GetGames();
+    }
+}
