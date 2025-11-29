@@ -28,7 +28,12 @@ public class GenresClient
             new(){
                 Id = 5,
                 Name = "Other"
-            }
+            },
+         new(){
+                Id = 6,
+                Name = "Battle Royale"
+            },
+
         ];
 
     public Genre[] GetGenres () { return genres; }
