@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject GamesClient Client
 
 <PageTitle>Home</PageTitle>
 
@@ -39,7 +40,6 @@ else{
 }
 
 @code {
-    private GamesClient client = new();
 
     // Null when component is render
     private GameSummary[]? games;
@@ -49,6 +49,6 @@ else{
     {
         base.OnInitialized();
 
-        games = client.GetGames();
+        games = Client.GetGames();
     }
 }
