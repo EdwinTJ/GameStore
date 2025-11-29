@@ -32,6 +32,28 @@ public class GamesClient
         }
     ];
 
+    // Create tmp instance of GenresClient and retrive the
+    // all genres(GetGenres) and add them to the array(genres)
+    private readonly Genre[] genres = new GenresClient().GetGenres();
+
     // Goes from a list to an array
-    public GameSummary[] GetGames() => [..games];
-}
+    public GameSummary[] GetGames() => [.. games];
+
+    // 
+    public void AddGame(GameDetail game)
+    {
+
+        ArgumentException.ThrowIfNullOrEmpty(game.GenreId);
+        var genre = genres.Single(genre => genre.Id == int.Parse(game.GenreId));
+
+        var gameSummary = new GameSummary
+        {
+            Id = games.Count + 1,
+            Name = game.Name,
+            Genre = genre.Name,
+            Price = game.Price,
+        };
+
+        games.Add(gameSummary);
+    }
+};
