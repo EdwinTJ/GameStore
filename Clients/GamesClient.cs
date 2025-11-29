@@ -1,5 +1,4 @@
 ﻿using GameStore.Models;
-
 namespace GameStore.Clients;
 
 public class GamesClient
@@ -55,5 +54,23 @@ public class GamesClient
         };
 
         games.Add(gameSummary);
+    }
+
+    public GameDetail GetGame(int id)
+    {
+        var game = games.Find(game => game.Id == id);
+        ArgumentNullException.ThrowIfNull(game);
+
+        var genre = genres.Single(genre => string.Equals(genre.Name, game.Genre, StringComparison.OrdinalIgnoreCase));
+
+        return new GameDetail
+        {
+            Id = game.Id,
+            Name = game.Name,
+            GenreId = game.Id.ToString(),
+            Price = game.Price,
+            ReleaseDate = game.ReleaseDate,
+        };
+
     }
 };
