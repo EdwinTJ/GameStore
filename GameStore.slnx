@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="GameStore.csproj" />
+  <Project Path="GameStore.BlazorUI/GameStore.BlazorUI.csproj" />
+  <Project Path="GameStore.WebAPI/GameStore.WebAPI.csproj" Id="4ff77ef6-ee73-4771-9869-72cdf1d2881d" />
 </Solution>
