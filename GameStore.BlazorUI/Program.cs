@@ -22,6 +22,7 @@ app.UseStatusCodePagesWithReExecute("/not-found", createScopeForStatusCodePages:
 app.UseHttpsRedirection();
 
 app.UseAntiforgery();
+// Add middleware
 
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
