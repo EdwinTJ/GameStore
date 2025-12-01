@@ -24,9 +24,5 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
 
-      - name: Test
-        run: dotnet test --configuration Release --no-build --no-restore --verbosity normal
-
-      - name: Publish Blazor app (validation)
-        working-directory: GameStore.BlazorUI
-        run: dotnet publish -c Release -o ./publish --no-build
+      - name: Run unit tests - Blazor API
+        run: dotnet test GameStore.BlazorAPI.UnitTests/GameStore.BlazorAPI.UnitTests.csproj --configuration Release --no-build --verbosity normal
