@@ -1,6 +1,6 @@
-﻿using GameStore.Models;
+﻿using GameStore.BlazorUI.Models;
 
-namespace GameStore.Clients;
+namespace GameStore.BlazorUI.Clients;
 public class GenresClient
 {
     private readonly Genre[] genres =

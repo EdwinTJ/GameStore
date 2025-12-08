@@ -1,4 +1,4 @@
-﻿namespace GameStore.Models;
+﻿namespace GameStore.BlazorUI.Models;
 
 public class GameSummary
 {

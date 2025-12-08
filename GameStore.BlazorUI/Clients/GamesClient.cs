@@ -1,5 +1,5 @@
-﻿using GameStore.Models;
-namespace GameStore.Clients;
+﻿using GameStore.BlazorUI.Models;
+namespace GameStore.BlazorUI.Clients;
 
 public class GamesClient
 {

@@ -1,5 +1,5 @@
-using GameStore.Clients;
-using GameStore.Components;
+using GameStore.BlazorUI.Clients;
+using GameStore.BlazorUI.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,11 +20,11 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseStatusCodePagesWithReExecute("/not-found", createScopeForStatusCodePages: true);
 app.UseHttpsRedirection();
-
+app.MapStaticAssets();
 app.UseAntiforgery();
 // Add middleware
 
-app.MapStaticAssets();
+
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
