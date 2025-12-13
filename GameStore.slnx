@@ -1,5 +1,5 @@
 <Solution>
   <Project Path="GameStore.BlazorAPI.UnitTests/GameStore.BlazorAPI.UnitTests.csproj" Id="23feec20-2914-411b-bcaa-cde17a01d608" />
   <Project Path="GameStore.BlazorUI/GameStore.BlazorUI.csproj" />
-  <Project Path="GameStore.WebAPI/GameStore.WebAPI.csproj" Id="4ff77ef6-ee73-4771-9869-72cdf1d2881d" />
+  <Project Path="GameStore.WebAPI/GameStore.WebAPI.csproj" Id="6c62964f-eb55-4f58-abb8-59740816ca98" />
 </Solution>
